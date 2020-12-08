@@ -11,7 +11,8 @@ r = requests.post(URL)
 data = r.json()
 datetime = datetime.datetime.now()
 
-with open(path + "/bike_sharing_data.json", "r") as fp:
+
+with open("/root/scriptie_rosa/scriptie_roos/bike_sharing_data.json", "r") as fp:
     try:
         json_data = json.load(fp)
     except:
@@ -20,5 +21,7 @@ with open(path + "/bike_sharing_data.json", "r") as fp:
 json_data[str(datetime)] = data
 
 
-with open(path + "/bike_sharing_data.json", "w") as fp:
+with open("/root/scriptie_rosa/scriptie_roos/bike_sharing_data.json", "w") as fp:
     json.dump(json_data, fp)
+
+print("succes")
